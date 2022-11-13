@@ -2,6 +2,7 @@
 
 class Task4
 {
+    const double eps = 1e-15;
     static void Main(string[] args)
     {
         /*
@@ -16,10 +17,25 @@ class Task4
          9: x = 3
         10: x = 25
          */
-        double x, n, a, sin_x;
-        Console.WriteLine("Enter the value for x: ");
-        x = Convert.ToDouble(Console.ReadLine());
 
+         double x, n = 1, sin_x = 0;
+       Console.Write("Enter the value for x: ");
+       x = Convert.ToDouble(Console.ReadLine());
+       double a = x; // перший ряд 
+        double b = a;
+
+       while(b > eps)
+       {
+           sin_x = sin_x + a; 
+           n = n + 2; // збільшення показника
+           a = -a * x * x / (n * (n - 1)); // додавання ряду
+           if(a < 0)
+            {
+                b = -a;
+            }
+       }
+       Console.WriteLine("sin_x = " + sin_x); 
+        
         /*
          Табличні значення синусу
          1: sin_x = 0
