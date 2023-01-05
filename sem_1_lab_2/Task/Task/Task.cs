@@ -168,10 +168,30 @@ namespace sem_1_lab_2
         {
             int size;
             Console.WriteLine("Enter the size of the matrix: ");
-            size = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                try
+                {
+                    size = Convert.ToInt32(Console.ReadLine());
+                    if (size < 1) throw new Exception();
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("Was inputed the wrong data");
+                }
+            }
 
             Percolation arr = new Percolation(size);
             Random rand = new Random();
+
+            for (int i = 0; i <= size * size * 0.8; i++)
+            {
+                int row = rand.Next(1, size + 1);
+                int col = rand.Next(1, size + 1);
+                arr.open(row, col);
+            }
+            arr.print();
 
             int choose = 0;
             while (choose != 4)
@@ -183,13 +203,37 @@ namespace sem_1_lab_2
                 Console.WriteLine("4 - finish");
 
                 choose = Int32.Parse(Console.ReadLine());
+
+                switch (choose)
+                {
+                    case 1:
+                        if (arr.percolates())
+                        {
+                            Console.WriteLine("System is percolate");
+                        }
+                        else
+                            Console.WriteLine("System is not percolate");
+                        break;
+
+                    case 2:
+                        Console.Write("Write row: ");
+                        int row = input(size);
+                        Console.Write("Write column: ");
+                        int col = input(size);
+                        arr.open(row, col);
+                        arr.print();
+                        break;
+                    case 3:
+                        Console.WriteLine($"Number of open sites: {arr.numberOfOpenSites()}");
+                        break;
+                }
             }
 
-            // Unit test
             Console.WriteLine("Want to run tests?\nYes - 1 or No - 0");
             choose = Convert.ToInt32(Console.ReadLine());
             if (choose == 1)
             {
+                /*Test*/
                 unit_test();
             }
         }
