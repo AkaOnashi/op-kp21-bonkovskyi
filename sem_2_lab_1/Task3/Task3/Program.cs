@@ -41,18 +41,38 @@ namespace Task3
                             //Input: file "EngWords" with words
                             //Output: return sorted array words
 
-                    
+                    string text = sw.ReadToEnd();
+                    string[] words = text.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    for (int i = 0; i < words.Length - 1; i++)
+                    {
+                        for (int j = 0; j < words.Length - i - 1; j++)
+                        {
+                            if (string.Compare(words[j], words[j + 1]) > 0)
+                            {
+                                string temp = words[j];
+                                words[j] = words[j + 1];
+                                words[j + 1] = temp;
+                            }
+                        }
+                    }
+
+                    //rewritten file for sorted words
+                    using (StreamWriter sw1 = new StreamWriter("SortedEngWords.txt"))
+                    {
+                        //test cases
+                        //Input: sorted array words
+                        //Output: written words in the file "SortedEngWords"
+
+                        foreach (string word in words)
+                        {
+                            sw1.Write(word);
+                        }
+
+                    }
 
                 }
-
-                //rewritten file for sorted words
-                using (StreamWriter sw = new StreamWriter("SortedEngWords.txt"))
-                {
-                                //test cases
-                            //Input: sorted array words
-                            //Output: written words in the file "SortedEngWords"
-
-                }
+                
             }
 
             catch
