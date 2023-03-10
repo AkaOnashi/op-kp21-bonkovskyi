@@ -14,32 +14,44 @@ namespace Task3
             try
             {
                 //new file & put down words in it
-                //using (StreamWriter sw = new StreamWriter("EngWords.txt"))
-                //{
-
-                //}
-
-                //// some cycle for sorting alphabetically
-                //for ()
-                //{
-
-                //}
-
-                ////rewritten file for sorted words
-                //using (StreamWriter sw = new StreamWriter("SortedEngWords.txt"))
-                //{
-
-                //}
-               
-                for(int i = 0; i < 10; i++)
+                using (StreamWriter sw = new StreamWriter("EngWords.txt"))
                 {
-                    string[] a = WordGenerator();
-                    foreach (string s in a)
+                                //test cases
+                            //Input: en empty file "EngWords.txt"
+                            //Output: no more than 40 words, that made WordGeneraator, in the file "EngWords.txt"
+
+                    Random random = new Random();
+                    int word_num = random.Next(10, 40);
+                    for (int i = 0; i < word_num; i++)
                     {
-                        Console.Write(s);
+                        string[] word = WordGenerator();
+                        foreach (string s in word)
+                        {
+                            sw.Write(s);
+                        }
+                        sw.WriteLine();
                     }
 
-                    Console.Write(" ");
+                }
+
+                //read file with words and sort it
+                using (StreamReader sw = new StreamReader("EngWords.txt"))
+                {
+                                //test cases
+                            //Input: file "EngWords" with words
+                            //Output: return sorted array words
+
+                    
+
+                }
+
+                //rewritten file for sorted words
+                using (StreamWriter sw = new StreamWriter("SortedEngWords.txt"))
+                {
+                                //test cases
+                            //Input: sorted array words
+                            //Output: written words in the file "SortedEngWords"
+
                 }
             }
 
@@ -81,11 +93,7 @@ namespace Task3
                 }
             }
 
-            //foreach (string word in word1)
-            //{
-            //    Console.Write(word);
-            //}
-            //Console.Write(" ");
+
             return word1;
         }
 
