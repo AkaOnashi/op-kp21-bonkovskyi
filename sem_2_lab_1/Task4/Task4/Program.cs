@@ -17,6 +17,16 @@ namespace Task4
 
                 using (StreamReader sr = new StreamReader("C:\\Users\\user\\Desktop\\Students.csv"))
                 {
+                            //test cases
+                        //Input: file with studnets: name, last name, score
+                        //Output: students whom score is less than 60. So in console we have to see the next:
+                                // Students whose score is less than 60 points:
+                            //First Name 1  Last Name 1
+                            //First Name 4  Last Name 4
+                            //First Name 5  Last Name 5
+                            //First Name 8  Last Name 8
+                            //First Name 11  Last Name 11
+
                     //convert data from file into array
                     string students = sr.ReadToEnd();
 
