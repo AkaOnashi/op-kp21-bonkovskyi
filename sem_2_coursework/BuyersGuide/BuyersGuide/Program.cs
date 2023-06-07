@@ -16,6 +16,7 @@ namespace BuyersGuide
 
             //encoding to Ukrainian letters
             Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
 
             bool flag = true;
             int choice = 0;
@@ -29,81 +30,84 @@ namespace BuyersGuide
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("\nОбери спеціалізацію магазину, який хочеш додати:\n - Продукти;\n - Промислові товари;\n - Іграшки;\n - Біжутерія;\n - Книги;\n - Одяг;\n - Кафе;\n - Ресторан;\n - Універсам;\n - Супермаркет;\n - Торговий центр;");
-                        Console.Write("\nНапиши тип спеціалізації: ");
-                        string spec_choice = Console.ReadLine();
+                        
                         Console.Write("\nВведіть назву магазину: ");
                         string name_shop = Console.ReadLine();
                         Console.Write("\nВведіть адресу магазину: ");
                         string address_shop = Console.ReadLine();
                         Console.Write("\nВведіть час роботи: ");
                         string time_shop = Console.ReadLine();
+                        Console.WriteLine("\nОбери спеціалізацію магазину, який хочеш додати:\n - Продукти;\n - Промислові товари;\n - Дитячі товари;\n - Біжутерія;\n - Книги;\n - Одяг;\n - Кафе;w\n - Універсам;\n - Супермаркет;\n - Торговий центр;");
+                        Console.Write("\nНапиши тип спеціалізації: ");
+                        string spec_choice = Console.ReadLine();
+                        Console.WriteLine("\nОберіть форму власності: \n1 - Одноосібне володіння.\n2 - Товариство\n3 - Корпорація.\n4 - Державне підприємство.");
+                        Console.Write("\nНапишіть потрібний номер: ");
+                        int owner_choice = Convert.ToInt32(Console.ReadLine());
+
 
                         //Іфами визначаю, який вид магазину створити
                         if (spec_choice.ToLower() == "продукти")
                         {
                             GroceryShop shop = new GroceryShop();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "промислові товари")
                         {
                             IndusrialShop shop = new IndusrialShop();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
-                        else if (spec_choice.ToLower() == "іграшки")
+                        else if (spec_choice.ToLower() == "дитячі товари")
                         {
                             ToyShop shop = new ToyShop();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "біжутерія")
                         {
                             JewelleryShop shop = new JewelleryShop();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "книги")
                         {
                             BookShop shop = new BookShop();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "одяг")
                         {
                             ClothesShop shop = new ClothesShop();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "кафе")
                         {
                             Cafe shop = new Cafe();
-                            shop.AddShop(name_shop, address_shop, time_shop);
-                            list_shop.Add(shop);
-                        }
-                        else if (spec_choice.ToLower() == "ресторан")
-                        {
-                            Restaurant shop = new Restaurant();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "універсам")
                         {
                             Market shop = new Market();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            Console.Write("\nВведіть тип товарів(через кому), що має цей універсам: ");
+                            string textProdList = Console.ReadLine();
+                            string[] prodList = textProdList.Split(',', ' ');
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop, prodList);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "супермаркет")
                         {
                             Supermarket shop = new Supermarket();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else if (spec_choice.ToLower() == "торговий центр")
                         {
                             ShoppingCenter shop = new ShoppingCenter();
-                            shop.AddShop(name_shop, address_shop, time_shop);
+                            shop.AddShop(name_shop, address_shop, (Ownership)owner_choice, time_shop);
                             list_shop.Add(shop);
                         }
                         else
@@ -140,12 +144,12 @@ namespace BuyersGuide
                         break;
                     case 5:
                         string filePath = "D:\\gitreps\\op\\op-kp21-bonkovskyi\\sem_2_coursework\\Buyers_Guide.csv";
-                        using (StreamWriter sr = new StreamWriter(filePath, append: true, encoding: Encoding.UTF8))
+                        using (StreamWriter sw = new StreamWriter(filePath, append: true, encoding: Encoding.UTF8))
                         {
                             foreach(Shop el in list_shop)
                             {
-                                string text = $"{el.Name};{el.Address};{el.ukrTypeShop};{el.WorkingHours}";
-                                sr.WriteLine(text);
+                                string text = $"{el.Name},{el.Address},{el.ukrTypeShop},{el.WorkingHours},{el.ukrOwnership}";
+                                sw.WriteLine(text);
                             }
                         }
                         Console.WriteLine("\nІнформація про магазини конвертована в файл!");

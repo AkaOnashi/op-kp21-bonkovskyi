@@ -8,10 +8,10 @@ namespace BuyersGuide
 {
     public enum Ownership 
     {
-        Solo,
-        Partenrship,
-        Corporation,
-        State
+        Solo = 1,
+        Partenrship = 2,
+        Corporation = 3,
+        State = 4
     }
 
     public enum TypeShop
@@ -30,12 +30,13 @@ namespace BuyersGuide
     public abstract class Shop
     {
 
-        private string name;
-        private string address;
-        public TypeShop typeShop;
+        protected string name;
+        protected string address;
+        protected TypeShop typeShop;
         public string ukrTypeShop;
-        private string workingHours;
-        private Ownership ownership;
+        protected string workingHours;
+        protected Ownership ownership;
+        public string ukrOwnership;
  
         public string Name { get { return name; } set { name = value; } }
         public string Address { get { return address; } set { address = value; } }
@@ -87,7 +88,7 @@ namespace BuyersGuide
                     ukrTypeShop = "Магазин одягу";
                     break;
                 case TypeShop.Toy:
-                    ukrTypeShop = "Іграшковий магазин";
+                    ukrTypeShop = "Магазин дитячих товарів";
                     break;
                 case TypeShop.Cafe:
                     ukrTypeShop = "Кафе";
@@ -99,9 +100,25 @@ namespace BuyersGuide
                     ukrTypeShop = "Торговий центр";
                     break;
             }
+
+            switch (this.Ownership)
+            {
+                case Ownership.Solo:
+                    ukrOwnership = "Одноосібне володіння";
+                    break;
+                case Ownership.Partenrship:
+                    ukrOwnership = "Товариство";
+                    break;
+                case Ownership.Corporation:
+                    ukrOwnership = "Корпорація";
+                    break;
+                case Ownership.State:
+                    ukrOwnership = "Державне підприємство";
+                    break;
+
+            }
           
-            
-            Console.WriteLine("\"{0}\" -- {1} -- {2} -- {3}", this.Name, this.Address, this.ukrTypeShop, this.WorkingHours);
+            Console.WriteLine("\"{0}\" -- {1} -- {2} -- {3} -- {4}", this.Name, this.Address, this.ukrTypeShop, this.WorkingHours, this.ukrOwnership);
             //this.Ownership + 
         }
     }
