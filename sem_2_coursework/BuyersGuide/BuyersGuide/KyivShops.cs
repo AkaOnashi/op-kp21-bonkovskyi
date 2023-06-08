@@ -103,7 +103,7 @@ namespace BuyersGuide
         {
 
         }
-        public void ProdList()
+        public void ProdList(string[] prodList)
         {
             Console.WriteLine("{0} - цей універсам має такі типи товарів:");
             foreach(string prod in prodList)
@@ -130,7 +130,7 @@ namespace BuyersGuide
             Shops = new List<Shop>();
         }
 
-        public void AddShop(Shop shop)
+        public void AddShopInSC(Shop shop)
         {
             Shops.Add(shop);
         }

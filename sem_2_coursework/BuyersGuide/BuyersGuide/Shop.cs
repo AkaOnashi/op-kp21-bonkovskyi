@@ -117,7 +117,6 @@ namespace BuyersGuide
                     break;
 
             }
-          
             Console.WriteLine("\"{0}\" -- {1} -- {2} -- {3} -- {4}", this.Name, this.Address, this.ukrTypeShop, this.WorkingHours, this.ukrOwnership);
             //this.Ownership + 
         }
