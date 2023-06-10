@@ -13,9 +13,10 @@ namespace BuyersGuide
         {
 
         }
+
         public void RestockInventory()
         {
-        
+            //Логіка поповнення продуктів
         }
     }
     public class IndusrialShop : Shop
@@ -94,6 +95,14 @@ namespace BuyersGuide
         public Cafe() : base(TypeShop.Cafe)
         {
 
+        }
+        public void TypeOfFood()
+        {
+            //Спеціалізація кафе
+        }
+        public void SeasonDish()
+        {
+            //Сезонні страви
         }
     }
     public class Market : Shop

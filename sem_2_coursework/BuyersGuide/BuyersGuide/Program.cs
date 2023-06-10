@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace BuyersGuide
 {
@@ -17,12 +18,17 @@ namespace BuyersGuide
 
             bool flag = true;
             int choice = 0;
-            Console.WriteLine(" Привіт!\nВітаю в програмі \"Довідник покупця\"");
+            Console.WriteLine("Привіт!\nВітаю в програмі \"Довідник покупця\"");
             while (flag)
             {
                 Console.WriteLine("\nОсь чим наш довідник може допомогти: \n 1 - Додати магазин.\n 2 - Подивитися інформацію про всі магазини.\n 3 - Знайти магазин.\n 4 - Видалити магазин.\n 5 - Конвертувати інформацію у файл.\n 6 - Припинити програму.");
                 Console.Write("Обери номер опції: ");
-                choice = Convert.ToInt32(Console.ReadLine());
+
+                if (!int.TryParse(Console.ReadLine(), out choice))
+                {
+                    Console.WriteLine("Введено некоректне значення. Будь ласка, введіть число.");
+                    continue;
+                }
 
                 switch (choice)
                 {
@@ -37,7 +43,6 @@ namespace BuyersGuide
                         break;
                     case 4:
                         ShopOperations.DeleteShop();
-                        Console.WriteLine("\nЦей магазин видалено!");
                         break;
                     case 5:
                         ShopOperations.ConvertToCSV();
@@ -47,6 +52,7 @@ namespace BuyersGuide
                         flag = false;
                         break;
                     default:
+                        Console.WriteLine("Введено некоректний номер опції. Будь ласка, спробуйте знову.");
                         break;
                 }
             }

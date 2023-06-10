@@ -8,5 +8,13 @@ namespace BuyersGuide
 {
     public class Restaurant : Cafe
     {
+        public Restaurant()
+        {
+            this.typeShop = TypeShop.Restaurant;
+        }
+        public void Menu()
+        {
+            //Логіка рекомандацій страв з меню
+        }
     }
 }

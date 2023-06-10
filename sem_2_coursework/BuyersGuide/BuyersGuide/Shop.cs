@@ -25,6 +25,8 @@ namespace BuyersGuide
         Toy,
         Cafe,
         Market,
+        Supermarket,
+        Restaurant,
         ShoppingCenter
     }
     public abstract class Shop
@@ -63,7 +65,10 @@ namespace BuyersGuide
             this.ownership = ownership;
             this.workingHours = workingHours;
         }
-
+        public static void SortShopsByName(List<Shop> shops)
+        {
+            shops.Sort((shop1, shop2) => string.Compare(shop1.Name, shop2.Name));
+        }
         public void PrintInfo()
         {
             Console.OutputEncoding = Encoding.Unicode;
@@ -93,8 +98,14 @@ namespace BuyersGuide
                 case TypeShop.Cafe:
                     ukrTypeShop = "Кафе";
                     break;
+                case TypeShop.Restaurant:
+                    ukrTypeShop = "Ресторан";
+                    break;
                 case TypeShop.Market:
                     ukrTypeShop = "Універсам";
+                    break;
+                case TypeShop.Supermarket:
+                    ukrTypeShop = "Супермаркет";
                     break;
                 case TypeShop.ShoppingCenter:
                     ukrTypeShop = "Торговий центр";

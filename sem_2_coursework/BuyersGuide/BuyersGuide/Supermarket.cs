@@ -8,5 +8,14 @@ namespace BuyersGuide
 {
     public class Supermarket : Market
     {
+        public Supermarket()
+        {
+            this.typeShop = TypeShop.Supermarket;
+        }
+
+        public void Inventarisation()
+        {
+            //Логіка інвентаризації супермаркета
+        }
     }
 }
