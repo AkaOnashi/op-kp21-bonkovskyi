@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BuyersGuide.Shop">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAQAAAAAAAAEAQAAQAAAIGABQCAAAQAQAAAAE=</HashCode>
+      <FileName>Shop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.ShopOperations">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAgAQAAAAAAEAAAAAAAAKAAAAAAA=</HashCode>
+      <FileName>ShopOperations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.GroceryShop">
+    <Position X="2.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.IndusrialShop">
+    <Position X="8.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.PetShop">
+    <Position X="14.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.BookShop">
+    <Position X="18.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.JewelleryShop">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.ClothesShop">
+    <Position X="10.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.ToyShop">
+    <Position X="16.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.Cafe">
+    <Position X="20.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.Market">
+    <Position X="6.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.ShoppingCenter">
+    <Position X="12.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>KyivShops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.Restaurant">
+    <Position X="20.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Restaurant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BuyersGuide.Supermarket">
+    <Position X="6.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Supermarket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BuyersGuide.Ownership">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAEAAIAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Shop.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BuyersGuide.TypeShop">
+    <Position X="8.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IECgEAAAAAAACABAAAAAAQAAAAAoAAAEAAAABAAAAAA=</HashCode>
+      <FileName>Shop.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
